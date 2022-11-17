@@ -1,0 +1,37 @@
+﻿@page
+@model ProjectWebApp.Pages.ViewProjectsModel
+@{
+    Layout = "_Layout";
+}
+
+<h2>All Projects</h2>
+<a class="btn btn-primary" href="/NewProject">New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Code</td>
+            <td>Project Name</td>
+            <td>Start Date</td>
+            <td>End Date</td>
+            <td>Duration</td>
+            <td>Cost</td>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach (var pr in Model.prList)
+       {
+        <tr>
+            <td>@pr.ProjectCode</td>
+            <td>@pr.ProjectName</td>
+            <td>@pr.StartDate</td>
+            <td>@pr.EndDate</td>
+            <td>@pr.Duration</td>
+            <td>@pr.EstimatedCost.ToString("C2")</td>
+            <td>
+                    <a class="btn btn-primary" href="/EditProject?PrCode=@pr.ProjectCode">Edit</a>
+                    <a class="btn btn-danger" href="/DeleteProject?PrCode=@pr.ProjectCode">Delete</a>
+            </td>
+        </tr>
+       }
+    </tbody>
+</table>

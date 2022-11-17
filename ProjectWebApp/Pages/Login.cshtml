@@ -1,0 +1,32 @@
+﻿@page
+@model ProjectWebApp.Pages.LoginModel
+@{
+    Layout = "_LayoutLogin";
+}
+
+<div class="login-box">
+    <h2>Login</h2>
+    @if (Model.errorMsg.Length > 0)
+    {
+        <div>
+        <label>@Model.errorMsg</label>
+        </div>
+    }
+    <form method="post">
+        <div class="user-box">
+            <input type="text" name="txtuserID" required="">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="password" name="txtPass" required="">
+            <label>Password</label>
+        </div>
+        <a href="/ViewProjects" type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </a>
+    </form>
+</div>

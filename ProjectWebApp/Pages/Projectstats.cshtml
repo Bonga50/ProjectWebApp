@@ -1,0 +1,44 @@
+﻿@page
+@model ProjectWebApp.Pages.ProjectstatsModel
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    var arPrNames = [];
+    var arDuration = [];
+
+    @foreach (var item in Model.lsp)
+    {
+        @:arPrNames.push('@item.ProjectName');
+        @:arDuration.push(@item.Duration);
+        
+        
+       }
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+                labels: arPrNames,
+            datasets: [{
+                label: 'Duration of project',
+                    data: arDuration,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

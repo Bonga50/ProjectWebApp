@@ -1,0 +1,10 @@
+﻿@page
+@using ProjectWebApp.classes;
+@{
+
+    string code = Request.Query["PrCode"];
+    Projects pr = new Projects();
+    pr.DeleteProject(code);
+
+    Response.Redirect("/ViewProjects");
+}

@@ -1,0 +1,35 @@
+﻿@page
+@model ProjectWebApp.Pages.EditProjectModel
+@{
+    Layout = "_Layout";
+}
+<h2>Edit Project</h2>
+<form class="row g-3" method="post">
+    <div class="col-md-6">
+        <label for="inputCode" class="form-label">Code</label>
+        <input type="text" class="form-control" id="inputCode" name="txtCode" value="@Model.pr.ProjectCode">
+    </div>
+    <div class="col-md-6">
+        <label for="inputPrName" class="form-label">Project Name</label>
+        <input type="text" class="form-control" id="inputPrName" name="txtPrName" value="@Model.pr.ProjectName">
+    </div>
+    <div class="col-md-4">
+        <label for="inputStartDate" class="form-label">Start Date</label>
+        <input type="date" class="form-control" id="inputStartDate" name="txtStartDate" value="@Model.pr.StartDate">
+    </div>
+    <div class="col-md-4">
+        <label for="inputEndDate" class="form-label">End Date</label>
+        <input type="date" class="form-control" id="inputEndDate" name="txtEndDate" value="@Model.pr.EndDate">
+    </div>
+    <div class="col-md-4">
+        <label for="inputRate" class="form-label">Rate</label>
+        <input type="text" class="form-control" id="inputEndDate" name="txtRate" >
+    </div>
+
+    <div class="col-4">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+    <div class="col-6">
+        <button type="submit" class="btn btn-primary">Reset</button>
+    </div>
+</form>
