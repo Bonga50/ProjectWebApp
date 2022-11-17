@@ -26,7 +26,7 @@ namespace ProjectWebApp
             services.AddRazorPages();
             services.AddMvc().AddRazorPagesOptions(x =>
             {
-                x.Conventions.AddPageRoute("/Login","");
+                x.Conventions.AddPageRoute("/Login"," ");
             });
             
         }
